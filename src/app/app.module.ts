@@ -7,12 +7,14 @@ import { WeekComponent } from './Components/week/week.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DayComponent } from './Components/day/day.component';
+import { LoginComponent } from './Components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeekComponent,
-    DayComponent
+    DayComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
