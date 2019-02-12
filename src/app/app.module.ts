@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { WeekComponent } from './Components/week/week.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { DayComponent } from './Components/day/day.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeekComponent
+    WeekComponent,
+    DayComponent
   ],
   imports: [
     BrowserModule,
