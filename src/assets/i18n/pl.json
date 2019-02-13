@@ -3,5 +3,8 @@
     "LOGIN_SIGNUP": "Zarejestruj się",
     "LOGIN_EMAIL": "E-mail",
     "LOGIN_PASSWORD": "Hasło",
-    "LOGIN_BUTTON": "Zaloguj"
+    "LOGIN_BUTTON": "Zaloguj",
+
+    "DAY_EDIT": "Edytuj",
+    "DAY_DELETE": "Usuń"
 }

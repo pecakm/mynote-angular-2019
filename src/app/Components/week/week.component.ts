@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CONSTANTS } from 'src/app/Helpers/Constants';
 
 @Component({
 	selector: 'app-week',
@@ -9,5 +10,7 @@ export class WeekComponent implements OnInit {
 
 	constructor() { }
 
-	ngOnInit() { }
+	ngOnInit() {
+		console.log(localStorage.getItem(CONSTANTS.TOKEN));
+	}
 }
