@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendUrl: 'https://localhost:3002/'
+  backendUrl: 'https://mynote.itpulse.pl:3002/'
 };
