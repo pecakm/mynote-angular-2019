@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { DayComponent } from './Components/day/day.component';
 import { LoginComponent } from './Components/login/login.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { NavbarComponent } from './Components/navbar/navbar.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -22,7 +23,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     WeekComponent,
     DayComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

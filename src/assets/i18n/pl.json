@@ -1,4 +1,7 @@
 {
+    "APP_TITLE": "myNote",
+    "NAVBAR_LOGOUT": "Wyloguj",
+    
     "LOGIN_HAVENT_GOT_ACCOUNT": "Nie masz konta?",
     "LOGIN_SIGNUP": "Zarejestruj się",
     "LOGIN_EMAIL": "E-mail",
