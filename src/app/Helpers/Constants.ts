@@ -6,5 +6,7 @@ export const CONSTANTS = {
     DISABLE: false,
 
     // Local storage
-    TOKEN: 'token'
+    TOKEN: 'token',
+
+    TIMESTAMP_24_HOURS: 86400000
 }
