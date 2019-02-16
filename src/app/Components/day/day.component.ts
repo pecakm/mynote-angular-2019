@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NoteService } from 'src/app/Services/note-service/note.service';
 
 @Component({
 	selector: 'app-day',
@@ -10,7 +11,9 @@ export class DayComponent implements OnInit {
 	@Input() timestamp: number;
 	date: Date;
 
-	constructor() {}
+	constructor(
+		private noteService: NoteService
+	) {}
 
 	ngOnInit() {
 		this.date = new Date(this.timestamp);
@@ -25,6 +28,7 @@ export class DayComponent implements OnInit {
 	}
 
 	save() {
+		this.noteService
 		this.editing = false;
 	}
 
