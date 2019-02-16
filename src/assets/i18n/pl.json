@@ -12,5 +12,7 @@
     "WEEK_NEXT": "Następny",
 
     "DAY_EDIT": "Edytuj",
-    "DAY_DELETE": "Usuń"
+    "DAY_DELETE": "Usuń",
+    "DAY_SAVE": "Zapisz",
+    "DAY_CANCEL": "Anuluj"
 }

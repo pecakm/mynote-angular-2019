@@ -6,6 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
 	styleUrls: ['./day.component.scss']
 })
 export class DayComponent implements OnInit {
+	editing = false;
 	@Input() timestamp: number;
 	date: Date;
 
@@ -13,5 +14,21 @@ export class DayComponent implements OnInit {
 
 	ngOnInit() {
 		this.date = new Date(this.timestamp);
+	}
+
+	edit() {
+		this.editing = true;
+	}
+
+	delete() {
+		console.log('delete clicked.');
+	}
+
+	save() {
+		this.editing = false;
+	}
+
+	cancel() {
+		this.editing = false;
 	}
 }
