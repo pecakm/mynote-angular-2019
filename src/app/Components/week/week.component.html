@@ -1,4 +1,6 @@
 <app-navbar [logged]="true"></app-navbar>
 <h1>myNote</h1>
-<app-day *ngFor="let day of dates"></app-day>
+<div class="days" *ngFor="let day of dates">
+    <app-day [timestamp]="day"></app-day>
+</div>
 
