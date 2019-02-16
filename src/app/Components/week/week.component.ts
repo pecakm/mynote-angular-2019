@@ -32,4 +32,20 @@ export class WeekComponent implements OnInit {
 			this.dates.push(day);
 		}
 	}
+
+	previousWeek() {
+		this.clearDates();
+		this.date.setDate(this.date.getDate() - 7);
+		this.setWeekDates();
+	}
+
+	clearDates() {
+		this.dates = [];
+	}
+
+	nextWeek() {
+		this.clearDates();
+		this.date.setDate(this.date.getDate() + 7);
+		this.setWeekDates();
+	}
 }

@@ -8,6 +8,9 @@
     "LOGIN_PASSWORD": "Hasło",
     "LOGIN_BUTTON": "Zaloguj",
 
+    "WEEK_PREVIOUS": "Poprzedni",
+    "WEEK_NEXT": "Następny",
+
     "DAY_EDIT": "Edytuj",
     "DAY_DELETE": "Usuń"
 }

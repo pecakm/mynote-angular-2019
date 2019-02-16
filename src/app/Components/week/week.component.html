@@ -1,5 +1,12 @@
 <app-navbar [logged]="true"></app-navbar>
-<h1>myNote</h1>
+<div class="row">
+    <div class="col">
+        <button (click)="previousWeek()" class="btn btn-block btn-outline-primary">{{'WEEK_PREVIOUS' | translate}}</button>
+    </div>
+    <div class="col">
+        <button (click)="nextWeek()" class="btn btn-block btn-outline-primary">{{'WEEK_NEXT' | translate}}</button>
+    </div>
+</div>
 <div class="days" *ngFor="let day of dates">
     <app-day [timestamp]="day"></app-day>
 </div>
