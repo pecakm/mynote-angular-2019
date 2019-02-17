@@ -32,8 +32,6 @@ export class WeekComponent implements OnInit {
 		this.date.setHours(0, 0, 0, 0);
 
 		this.noteService.getNotes(Number(this.date)).subscribe(notes => {
-			console.log(notes);
-
 			for (let i = 0; i < 7; i++) {
 				const day = this.date.getTime() + i * CONSTANTS.TIMESTAMP_24_HOURS;
 				const note = notes.find(note => note.date == day);

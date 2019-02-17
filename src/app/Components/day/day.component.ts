@@ -10,6 +10,7 @@ import { Note } from 'src/app/Models/Note';
 export class DayComponent implements OnInit {
 	editing = false;
 	@Input() note: Note;
+	contentValue: string;
 
 	constructor(
 		private noteService: NoteService
@@ -19,6 +20,8 @@ export class DayComponent implements OnInit {
 
 	edit() {
 		this.editing = true;
+
+		this.contentValue = this.note.content;
 	}
 
 	delete() {
@@ -29,12 +32,13 @@ export class DayComponent implements OnInit {
 		this.editing = false;
 
 		const note = new Note(this.note.date);
-		note.content = 'Lalaland';
+		note.content = this.contentValue;
 
 		this.noteService.saveNote(note).subscribe(answer => {
-			console.log(answer);
+			this.note = note;
 		}, error => {
-			console.log(error);
+			alert('Coś poszło nie tak. Nie można zapisać notatki.');
+			this.editing = true;
 		});
 	}
 
