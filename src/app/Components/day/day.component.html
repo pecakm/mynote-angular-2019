@@ -1,5 +1,5 @@
 <div class="form-group">
-	<label for="dayNote">{{note.date | amDateFormat:'DD/MM/YYYY'}}</label>
+	<label for="dayNote">{{note.date | amLocale:'pl' | amDateFormat:'dddd, DD MMMM YYYY' }}</label>
 	<textarea *ngIf="!editing" class="form-control" id="dayNote" rows="6" readonly>{{note.content}}</textarea>
 	<textarea *ngIf="editing" class="form-control" id="dayNote" rows="6" [(ngModel)]="contentValue"></textarea>
 </div>
