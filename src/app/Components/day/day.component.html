@@ -9,7 +9,7 @@
 		<button *ngIf="editing" (click)="save()" class="btn btn-success btn-block">{{'DAY_SAVE' | translate}}</button>
 	</div>
 	<div class="col">
-		<button *ngIf="!editing" (click)="delete()" class="btn btn-danger btn-block">{{'DAY_DELETE' | translate}}</button>
+		<button *ngIf="!editing" (click)="delete()" class="btn btn-danger btn-block" disabled>{{'DAY_DELETE' | translate}}</button>
 		<button *ngIf="editing" (click)="cancel()" class="btn btn-info btn-block">{{'DAY_CANCEL' | translate}}</button>
 	</div>
 </div>

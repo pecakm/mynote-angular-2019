@@ -16,7 +16,11 @@ export class LoginComponent implements OnInit {
 	constructor(
 		private router: Router,
 		private userService: UserService
-	) { }
+	) {
+		if (localStorage.getItem(CONSTANTS.TOKEN)) {
+			router.navigate(['/calendar']);
+		}
+	}
 
 	ngOnInit() {}
 
