@@ -12,8 +12,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DayComponent } from './Components/day/day.component';
 import { LoginComponent } from './Components/login/login.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { Interceptor } from './Helpers/Interceptor';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -42,7 +43,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     MomentModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

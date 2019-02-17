@@ -35,7 +35,12 @@ export class LoginComponent implements OnInit {
 					this.router.navigate(['/calendar']);
 				}
 			}, error => {
-				alert('Niepoprawny login lub hasło.');
+				if (error.status == 500) {
+					alert('Coś poszło nie tak. Spróbuj ponownie później.');
+				} else {
+					alert('Niepoprawny login lub hasło.');
+				}
+				
 				this.disabledButton = false;
 			});
 	}

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NoteService } from 'src/app/Services/note-service/note.service';
+import { Note } from 'src/app/Models/Note';
 
 @Component({
 	selector: 'app-day',
@@ -8,16 +9,13 @@ import { NoteService } from 'src/app/Services/note-service/note.service';
 })
 export class DayComponent implements OnInit {
 	editing = false;
-	@Input() timestamp: number;
-	date: Date;
+	@Input() note: Note;
 
 	constructor(
 		private noteService: NoteService
 	) {}
 
-	ngOnInit() {
-		this.date = new Date(this.timestamp);
-	}
+	ngOnInit() {}
 
 	edit() {
 		this.editing = true;
@@ -28,8 +26,16 @@ export class DayComponent implements OnInit {
 	}
 
 	save() {
-		this.noteService
 		this.editing = false;
+
+		const note = new Note(this.note.date);
+		note.content = 'Lalaland';
+
+		this.noteService.saveNote(note).subscribe(answer => {
+			console.log(answer);
+		}, error => {
+			console.log(error);
+		});
 	}
 
 	cancel() {

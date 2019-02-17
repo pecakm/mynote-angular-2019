@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CONSTANTS } from 'src/app/Helpers/Constants';
+import { NoteService } from 'src/app/Services/note-service/note.service';
+import { Note } from 'src/app/Models/Note';
 
 @Component({
 	selector: 'app-week',
@@ -8,15 +10,17 @@ import { CONSTANTS } from 'src/app/Helpers/Constants';
 })
 export class WeekComponent implements OnInit {
 	date = new Date();
-	dates: number[] = [];
+	notes: Note[] = [];
 
-	constructor() { }
+	constructor(
+		private noteService: NoteService
+	) { }
 
 	ngOnInit() {
-		this.setWeekDates();
+		this.loadNotes();
 	}
 
-	setWeekDates() {
+	loadNotes() {
 		const dayOfWeek = this.date.getDay();
 
 		if (dayOfWeek == 0) {
@@ -27,25 +31,37 @@ export class WeekComponent implements OnInit {
 		
 		this.date.setHours(0, 0, 0, 0);
 
-		for (let i = 0; i < 7; i++) {
-			const day = this.date.getTime() + i * CONSTANTS.TIMESTAMP_24_HOURS;
-			this.dates.push(day);
-		}
+		this.noteService.getNotes(Number(this.date)).subscribe(notes => {
+			console.log(notes);
+
+			for (let i = 0; i < 7; i++) {
+				const day = this.date.getTime() + i * CONSTANTS.TIMESTAMP_24_HOURS;
+				const note = notes.find(note => note.date == day);
+
+				if (note) {
+					this.notes.push(note);
+				} else {
+					this.notes.push(new Note(day));
+				}
+			}
+		}, error => {
+			alert('Coś poszło nie tak...');
+		});
 	}
 
 	previousWeek() {
-		this.clearDates();
+		this.clearNotes();
 		this.date.setDate(this.date.getDate() - 7);
-		this.setWeekDates();
+		this.loadNotes();
 	}
 
-	clearDates() {
-		this.dates = [];
+	clearNotes() {
+		this.notes = [];
 	}
 
 	nextWeek() {
-		this.clearDates();
+		this.clearNotes();
 		this.date.setDate(this.date.getDate() + 7);
-		this.setWeekDates();
+		this.loadNotes();
 	}
 }
