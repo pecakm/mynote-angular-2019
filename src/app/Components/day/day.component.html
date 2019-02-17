@@ -3,13 +3,15 @@
 	<textarea *ngIf="!editing" class="form-control" id="dayNote" rows="6" readonly>{{note.content}}</textarea>
 	<textarea *ngIf="editing" class="form-control" id="dayNote" rows="6" [(ngModel)]="contentValue"></textarea>
 </div>
-<div class="row">
-	<div class="col">
-		<button *ngIf="!editing" (click)="edit()" class="btn btn-info btn-block">{{'DAY_EDIT' | translate}}</button>
-		<button *ngIf="editing" (click)="save()" class="btn btn-success btn-block">{{'DAY_SAVE' | translate}}</button>
-	</div>
-	<div class="col">
-		<button *ngIf="!editing" (click)="delete()" class="btn btn-danger btn-block" disabled>{{'DAY_DELETE' | translate}}</button>
-		<button *ngIf="editing" (click)="cancel()" class="btn btn-info btn-block">{{'DAY_CANCEL' | translate}}</button>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<button *ngIf="!editing" (click)="edit()" class="btn btn-info btn-block">{{'DAY_EDIT' | translate}}</button>
+			<button *ngIf="editing" (click)="save()" class="btn btn-success btn-block">{{'DAY_SAVE' | translate}}</button>
+		</div>
+		<div class="col">
+			<button *ngIf="!editing" (click)="delete()" class="btn btn-danger btn-block" disabled>{{'DAY_DELETE' | translate}}</button>
+			<button *ngIf="editing" (click)="cancel()" class="btn btn-info btn-block">{{'DAY_CANCEL' | translate}}</button>
+		</div>
 	</div>
 </div>
