@@ -1,0 +1,23 @@
+<app-navbar [logged]="false"></app-navbar>
+<p><small>{{'LOGIN_HAVENT_GOT_ACCOUNT' | translate}} <a routerLink="/signup">{{'LOGIN_SIGNUP' | translate}}</a></small></p>
+<div class="form-group">
+	<input
+	(keyup.enter)="logIn()"
+	type="email"
+	[(ngModel)]="email"
+	class="form-control"
+	placeholder="{{'LOGIN_EMAIL' | translate}}"
+	appAutofocus>
+</div>
+<div class="form-group">
+	<input
+	(keyup.enter)="logIn()"
+	type="password"
+	[(ngModel)]="pass"
+	class="form-control"
+	placeholder="{{'LOGIN_PASSWORD' | translate}}">
+</div>
+<div class="form-group">
+	<button *ngIf="disabledButton" class="btn btn-block btn-success" disabled>{{'LOGIN_BUTTON' | translate}}</button>
+	<button *ngIf="!disabledButton" (click)="logIn()" class="btn btn-block btn-success">{{'LOGIN_BUTTON' | translate}}</button>
+</div>

@@ -1,0 +1,10 @@
+<nav class="navbar fixed-top navbar-light bg-light">
+	<div class="container">
+		<a class="navbar-brand" href="/">{{'APP_TITLE' | translate}}</a>
+		<ul *ngIf="logged" class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a (click)="logOut()" class="nav-link" href="/">{{'NAVBAR_LOGOUT' | translate}}</a>
+			</li>
+		</ul>
+	</div>
+</nav>

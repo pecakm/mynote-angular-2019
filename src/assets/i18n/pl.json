@@ -1,0 +1,18 @@
+{
+    "APP_TITLE": "myNote",
+    "NAVBAR_LOGOUT": "Wyloguj",
+    
+    "LOGIN_HAVENT_GOT_ACCOUNT": "Nie masz konta?",
+    "LOGIN_SIGNUP": "Zarejestruj się",
+    "LOGIN_EMAIL": "E-mail",
+    "LOGIN_PASSWORD": "Hasło",
+    "LOGIN_BUTTON": "Zaloguj",
+
+    "WEEK_PREVIOUS": "Poprzedni",
+    "WEEK_NEXT": "Następny",
+
+    "DAY_EDIT": "Edytuj",
+    "DAY_DELETE": "Usuń",
+    "DAY_SAVE": "Zapisz",
+    "DAY_CANCEL": "Anuluj"
+}
